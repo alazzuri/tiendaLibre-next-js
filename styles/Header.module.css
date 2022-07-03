@@ -1,0 +1,48 @@
+.header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  color: var(--primary-text);
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+}
+
+.header div figure {
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.navbar {
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.navbar a {
+  margin: 0 0.5rem;
+}
+
+.appName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.appName p {
+  margin: 0;
+  text-align: left;
+  width: 300px;
+  font-weight: bold;
+}
