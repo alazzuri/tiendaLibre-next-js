@@ -9,6 +9,8 @@ type IProps = {
 };
 
 const Home: NextPage<IProps> = ({ data }) => {
+  if (!data) return null;
+
   const formatPrice: (price: number) => string = (price) =>
     price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -82,18 +84,18 @@ const Home: NextPage<IProps> = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const baseUrl = process.env.DEV
-    ? "http://localhost:3000/"
-    : "https://tienda-libre-example.vercel.app";
+// export async function getServerSideProps() {
+//   const baseUrl = process.env.DEV
+//     ? "http://localhost:3000/"
+//     : "https://tienda-libre-example.vercel.app";
 
-  const response = await fetch(`${baseUrl}/api/products`);
+//   const response = await fetch(`${baseUrl}/api/products`);
 
-  const data = await response.json();
+//   const data = await response.json();
 
-  return {
-    props: { data },
-  };
-}
+//   return {
+//     props: { data },
+//   };
+// }
 
 export default Home;

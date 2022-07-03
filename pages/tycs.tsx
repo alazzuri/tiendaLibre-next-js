@@ -9,6 +9,8 @@ type IProps = {
 };
 
 const TerminosYCondiciones: NextPage<IProps> = ({ data }) => {
+  if (!data) return null;
+
   const { version, tycs } = data;
 
   const renderTyc: (tyc: TyC) => JSX.Element = ({ id, description, title }) => (
@@ -34,18 +36,18 @@ const TerminosYCondiciones: NextPage<IProps> = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
-  const baseUrl = process.env.DEV
-    ? "http://localhost:3000/"
-    : "https://tienda-libre-example.vercel.app";
+// export async function getStaticProps() {
+//   const baseUrl = process.env.DEV
+//     ? "http://localhost:3000/"
+//     : "https://tienda-libre-example.vercel.app";
 
-  const response = await fetch(`${baseUrl}/api/tycs`);
+//   const response = await fetch(`${baseUrl}/api/tycs`);
 
-  const data = await response.json();
+//   const data = await response.json();
 
-  return {
-    props: { data },
-  };
-}
+//   return {
+//     props: { data },
+//   };
+// }
 
 export default TerminosYCondiciones;
