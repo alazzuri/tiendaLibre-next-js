@@ -83,7 +83,9 @@ const Home: NextPage<IProps> = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-  const baseUrl = process.env.VERCEL_URL ?? "http://localhost:3000/";
+  const baseUrl = process.env.DEV
+    ? "http://localhost:3000/"
+    : "https://tienda-libre-example.vercel.app";
 
   const response = await fetch(`${baseUrl}/api/products`);
 
