@@ -36,18 +36,18 @@ const TerminosYCondiciones: NextPage<IProps> = ({ data }) => {
   );
 };
 
-// export async function getStaticProps() {
-//   const baseUrl = process.env.DEV
-//     ? "http://localhost:3000/"
-//     : "https://tienda-libre-example.vercel.app";
+export async function getStaticProps() {
+  const baseUrl = process.env.DEV
+    ? "http://localhost:3000/"
+    : "https://tienda-libre-example-sx92goki3-alazzuri.vercel.app";
 
-//   const response = await fetch(`${baseUrl}/api/tycs`);
+  const response = await fetch(`${baseUrl}/api/tycs`);
 
-//   const data = await response.json();
+  const data = await response.json();
 
-//   return {
-//     props: { data },
-//   };
-// }
+  return {
+    props: { data },
+  };
+}
 
 export default TerminosYCondiciones;
